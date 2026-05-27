@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: vending-sales
+    runtime: node
+    region: singapore
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: vending-sales-db
+          property: connectionString
+      - key: NODE_ENV
+        value: production
+
+databases:
+  - name: vending-sales-db
+    databaseName: vending_sales
+    plan: free
+    region: singapore

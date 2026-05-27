@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="매출관리">
+  <meta name="theme-color" content="#0f172a">
+  <title>자판기 매출·재고관리</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icon-apple.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <h1>📊 매출·재고관리</h1>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num" id="stat-sales">—</span>
+          <span class="stat-lbl">총판매</span>
+        </div>
+        <div class="stat green">
+          <span class="stat-num" id="stat-revenue">—</span>
+          <span class="stat-lbl">총매출</span>
+        </div>
+        <div class="stat crit">
+          <span class="stat-num" id="stat-low">—</span>
+          <span class="stat-lbl">재고부족</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 회기 선택 바 -->
+  <div class="period-bar" id="period-bar">
+    <button class="period-btn active" data-period="1">1회기</button>
+    <button class="period-btn" data-period="2">2회기</button>
+    <button class="period-btn" data-period="3">3회기</button>
+    <button class="period-btn" data-period="4">4회기</button>
+    <button class="period-btn" data-period="5">5회기</button>
+    <button class="period-btn" data-period="6">6회기</button>
+    <button class="period-btn" data-period="7">7회기</button>
+    <button class="period-btn" data-period="8">8회기</button>
+    <button class="period-btn" data-period="9">9회기</button>
+    <button class="period-btn" data-period="10">10회기</button>
+    <button class="period-btn" data-period="11">11회기</button>
+    <button class="period-btn" data-period="12">12회기</button>
+    <button class="period-btn annual-btn" data-period="annual">📈 연간합계</button>
+  </div>
+
+  <main id="main"></main>
+
+  <div class="bottom-bar">
+    <span class="unsaved-hint" id="unsaved-hint"></span>
+    <button class="btn-save-all" id="btn-save-all">전체 저장</button>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
